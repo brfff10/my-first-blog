@@ -7,10 +7,12 @@
             <h1><a href="">such blog much wow</a></h1>
 	</div>
  
-	<div> 
-	    <p>published: 24.08.2016, 15:44</p>
-	    <h2>Hi</h2>
-	    <img scr="doge.png" alt="doge" style="width:304ps;height:228px;">
-
+	{% for post in posts %}
+	    <div>
+	        <p>published: {{ post.published_date }}</p>
+		<h1><a href="">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaksbr }}</p>
+	    </div>
+	{% endfor %}
     </body>
 </html> 
